@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>About Us</title>
+    <title>Contact-Us</title>
     <!-- custom stylesheet -->
-    <link rel="stylesheet" href="/src/css/aboutUs.css">
+    <link rel="stylesheet" href="/src/css/contact.css">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/548c44d661.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
@@ -47,10 +47,10 @@
                                 <a href="#" class="nav-link ">Products</a>
                             </li>
                             <li class="nav-item mx-2 border border-1 border-dark">
-                                <a href="#" class="nav-link active" aria-current="page">About</a>
+                                <a href="#" class="nav-link" aria-current="page">About</a>
                             </li>
                             <li class="nav-item mx-2 border border-1 border-dark">
-                                <a href="#" class="nav-link ">Contact</a>
+                                <a href="#" class="nav-link active">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -83,69 +83,47 @@
 
 
         <main>
-            <section class="about-us mt-4">
-                <h2 class="text-center fs-1">About Us</h2>
-                <hr class="bg-white text-black">
-                <div class="about-description mx-2 my-4">
-                    The E-Commerce Group is one of India’s leading digital commerce entities and includes group
-                    companies.
 
-                    Started in 2007, E-Commerce has enabled millions of sellers, merchants, and small businesses to
-                    participate in India's digital commerce revolution With a registered customer base of more than 500
-                    million, E-Commerce's marketplace offers over 150 million products across 80+ categories. Today,
-                    there are over 14 lakh sellers on the platform. With a focus on empowering and delighting every
-                    Indian by delivering value through technology and innovation, E-Commerce has created lakhs of jobs
-                    in
-                    the ecosystem while empowering generations of entrepreneurs and MSMEs. Flipkart is known for
-                    pioneering services such as Cash on Delivery, No Cost EMI and easy returns, which are
-                    customer-centric innovations that have made online shopping more accessible and affordable for
-                    millions of Indians. In 2024, E-Commerce also introduced the E-Commerce UPI handle to further
-                    enhance
-                    its digital payment offerings for all customers and further India’s digital economy vision.
-                </div>
-            </section>
+            <div class="mt-3 mb-1 text-center fs-1 fw-semibold">Contact Us</div>
+            <hr class="mt-1 mb-2">
 
-            <section class="product-feature">
-                <h2 class="text-center mx-2 my-4 fs-1">Our Products</h2>
+            <div
+                class="form-container container-sm mt-3 mb-5 mx-0 border border-1 border-primary  position-relative top-50 start-50 translate-middle-x">
 
-                <div
-                    class="container-lg d-flex flex-row flex-wrap justify-content-center mx-0 my-2 border border-1 border-danger">
 
-                    <div class="card mx-2 my-2 mb-2 border border-0">
-                        <img src="/images/features/feature-1.jpeg" class="card-img-feature rounded-1"
-                            alt="feature-1.jpeg">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Men's Clothing</h5>
-                        </div>
+                <form class="d-flex flex-column fs-5 mx-0 w-100">
+
+
+                    <div class="mb-3">
+                        <label for="exampleInputName1" class="form-label">Name</label>
+
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Enter Your Name"
+                            aria-label="name">
                     </div>
 
-                    <div class="card mx-2 my-2 mb-2 border border-0">
-                        <img src="/images/features/feature-2.jpeg" class="card-img-feature rounded-1"
-                            alt="feature-2.jpeg">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Women's Clothing</h5>
-                        </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email@example.com"
+                            aria-label="email">
                     </div>
 
-                    <div class="card mx-2 my-2 mb-2 border border-0">
-                        <img src="/images/features/feature-3.jpeg" class="card-img-feature rounded-1"
-                            alt="feature-3.jpeg">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Jewelery</h5>
-                        </div>
+                    <div class="mb-3">
+                        <label for="exampleInputMsg" class="form-label">Message</label>
+
+                        <textarea class="form-control" id="exampleInputMsg1" placeholder="Enter Your Message"
+                            aria-label="send message With textarea" rows="3"></textarea>
                     </div>
 
-                    <div class="card mx-2 my-2 mb-2 border border-0">
-                        <img src="/images/features/feature-4.jpeg" class="card-img-feature rounded-1"
-                            alt="feature-4.jpeg">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Electronics</h5>
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-primary fs-5 w-25 mx-auto my-2"
+                        id="contactFormSubmitBtn">Send</button>
+                </form>
 
-                </div>
-            </section>
+            </div>
         </main>
+
+
 
         <footer class="creator text-center mt-5">
             <h5 class="fs-6">
