@@ -1,0 +1,38 @@
+.card {
+  width: 15rem;
+  height: fit-content;
+}
+
+.card-img-top {
+  width: 14rem;
+  height: 18rem;
+}
+
+@media (min-width: 375px) {
+  .card {
+    width: 20rem;
+  }
+
+  .card-img-top {
+    width: 18rem;
+  }
+}
+
+.card-body {
+  width: 18rem;
+  height: 14rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: grey;
+}
+
+main .nav .btn {
+  width: 10rem;
+}
+
+.active-tab {
+  background: #000000;
+  color: #ffffff;
+}
