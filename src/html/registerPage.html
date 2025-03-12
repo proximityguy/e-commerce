@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Login/Register|E-Commerce</title>
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="/src/css/login_register.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/548c44d661.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+</head>
+
+<body class="m-0 p-0 text-black bg-white">
+
+
+    <div class="container-fluid w-100 h-100 ">
+
+        <!-- HEADER NAVBAR  begind here -->
+        <header class="header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+                <div class=" container-fluid m-0   w-100">
+                    <a href="/src/html/homePage.html" class="navbar-brand py-2 px-3 fw-bold fs-4 ">E-Commerce</a>
+
+                    <!-- Toggle button for mobile screens -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navbar items (collapse on mobile) -->
+                    <div class="collapse navbar-collapse  ms-lg-5 me-auto w-auto" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 py-1 px-2 d-flex justify-content-center w-100">
+                            <li class="nav-item mx-2 ">
+                                <a href="/src/html/homePage.html" class="nav-link fs-5">Home</a>
+                            </li>
+                            <li class="nav-item mx-2 ">
+                                <a href="/src/html/product.html" class="nav-link fs-5">Products</a>
+                            </li>
+                            <li class="nav-item mx-2 ">
+                                <a href="/src/html/aboutUs.html" class="nav-link fs-5">About</a>
+                            </li>
+                            <li class="nav-item mx-2 ">
+                                <a href="/src/html/contact.html" class="nav-link fs-5">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="collapse navbar-collapse ms-lg-5 me-auto  w-auto" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-0 me-auto mb-2 mb-lg-0 py-1 px-2  d-flex justify-content-end w-100">
+                            <li class="nav-item m-2 border border-1 border-dark rounded-1 ">
+                                <a href="/src/html/loginPage.html" class="nav-link ">
+                                    <i class="fa-solid fa-right-to-bracket"></i>
+                                    Login</a>
+                            </li>
+                            <li class="nav-item m-2 border border-1 border-dark rounded-1 ">
+                                <a href="" class="nav-link ">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Register</a>
+                            </li>
+                            <li class="nav-item m-2 border border-1 border-dark rounded-1 ">
+                                <a href="/src/html/cart.html" class="nav-link  ">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    Cart</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+
+
+        </header>
+
+        <!-- navbar ENDS here -->
+        <main class="container  m-1">
+
+            <div class="mt-3 mb-1 text-center fs-1 fw-semibold">Latest Poducts</div>
+            <hr class="mt-1 mb-2">
+
+            <!-- ////////////////////////////////////// -->
+            <div class="container  mt-5 mb-3  w-auto">
+
+                <form class="row  d-flex flex-column justify-content-center align-items-center w-auto row-gap-4">
+
+                    <div class="col-md-4">
+                        <label for="validationServer01" class="form-label">Name</label>
+
+                        <input type="text" class="form-control is-valid" id="validationServer01" value=""
+                            placeholder="Enter Your Name" required>
+
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="validationServerEmail" class="form-label">E-mail</label>
+
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control is-invalid" id="validationServerEmail"
+                                aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
+                                placeholder="exmaple@domain.com" required>
+
+                            <div id="validationServerEmailFeedback" class="invalid-feedback">
+                                Enter a valid email address, i.e., includes '@' and '.'
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationServerContact" class="form-label">Phone Number</label>
+
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control is-invalid" id="validationServerContact"
+                                aria-describedby="inputGroupPrepend3 validationServerContactFeedback"
+                                placeholder="98xxxxxx23" required>
+
+                            <div id="validationServerContactFeedback" class="invalid-feedback">
+                                Enter a valid 10-digit Indian Phone Number.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12  w-auto">
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+
+                </form>
+            </div>
+        </main>
+
+
+        <!-- FOOTER begins here -->
+        <footer class="creator text-center mt-5">
+            <h5 class="fs-6">
+                Made with ❤️ by
+                <a href="https://github.com/proximityguy" class="text-black bg-white">
+                    Manish
+                </a>
+            </h5>
+        </footer>
+        <!-- footer ENDS here -->
+
+    </div>
+
+
+
+
+
+    <!-- Bootstrap JS Bundle (Includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- adding custom js file -->
+    <!-- <script src="/src/js/cart"></script> -->
+</body>
+
+</html>
+<!-- /////////////////////////// -->

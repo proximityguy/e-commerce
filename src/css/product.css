@@ -30,9 +30,11 @@
 
 main .nav .btn {
   width: 10rem;
+  border: 1px solid #000000;
 }
 
-.active-tab {
+main .nav .active-tab {
   background: #000000;
   color: #ffffff;
+  border: none;
 }

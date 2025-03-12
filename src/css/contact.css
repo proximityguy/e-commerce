@@ -1,18 +1,7 @@
 body {
   box-sizing: border-box;
 }
-
-/* .form-container {
-  width: 100px;
+.form-box form {
+  width: 45rem;
+  max-width: 60rem;
 }
-
-@media (min-width: 428px) {
-  .form-container {
-    width: 100%;
-  }
-} */
-/* @media (max-width: 1280px) {
-  .form-container {
-    width: 25%;
-  }
-} */
