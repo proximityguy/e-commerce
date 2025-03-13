@@ -1,6 +1,7 @@
 body {
   box-sizing: border-box;
 }
+
 .form-box form {
   width: 45rem;
   max-width: 60rem;
