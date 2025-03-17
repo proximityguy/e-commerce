@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Login/Register|E-Commerce</title>
+    <title>Register|E-Commerce</title>
     <!-- custom stylesheet -->
     <link rel="stylesheet" href="/src/css/login_register.css">
     <!-- font awesome -->
@@ -84,57 +84,84 @@
         <!-- navbar ENDS here -->
         <main class="container">
 
-            <div class="mt-3 mb-1 text-center fs-1 fw-semibold ">Register to Buy Products</div>
+            <div class="mt-3 mb-1 text-center fs-1 fw-semibold ">Register to Explore more Products</div>
             <hr class="mt-1 mb-2 ">
 
             <!-- ////////////////////////////////////// -->
             <div
                 class="container mt-3 mb-5 mx-0 p-0  d-flex justify-content-center  position-relative top-50 start-50 translate-middle-x">
 
-                <form class="row  d-flex flex-column justify-content-center align-items-center row-gap-4 w-100">
+                <form class=" row d-flex flex-column justify-content-center align-items-center row-gap-2 w-auto ">
+                    <!-- username -->
+                    <div class="">
+                        <label for="userName" class="form-label ">First and Last Name</label>
+                        <div class="has-validation">
+                            <input type="text" class="form-control is-valid" id="userName" value=""
+                                placeholder="Enter Your Full Name" required>
 
-                    <div class=" col-md-4 ">
-                        <label for="validationServer01" class="form-label ">Name</label>
-
-                        <input type="text" class=" form-control is-valid" id="validationServer01" value=""
-                            placeholder="Enter Your Name" required>
-
-                        <div class="valid-feedback">
-                            Looks good!
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Enter correct name!
+                            </div>
                         </div>
+
                     </div>
+                    <!-- user's email -->
+                    <div class="">
+                        <label for="userEmail" class="form-label">E-mail </label>
 
-                    <div class="col-md-4">
-                        <label for="validationServerEmail" class="form-label">E-mail</label>
+                        <div class="has-validation">
+                            <input type="email" class="form-control is-invalid" id="userEmail"
+                                placeholder="example@domain.com" required>
 
-                        <div class="input-group has-validation">
-                            <input type="text" class="form-control is-invalid" id="validationServerEmail"
-                                aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
-                                placeholder="exmaple@domain.com" required>
-
-                            <div id="validationServerEmailFeedback" class="invalid-feedback">
+                            <div class="valid-feedback">
+                                Looks Good!
+                            </div>
+                            <div class="invalid-feedback">
                                 Enter a valid email address, i.e., includes '@' and '.'
                             </div>
                         </div>
-
                     </div>
-                    <div class="col-md-4">
-                        <label for="validationServerContact" class="form-label">Phone Number</label>
+                    <!-- user's phone number -->
+                    <div class="">
+                        <label for="validationServerTelephone" class="form-label">Mobile No</label>
 
-                        <div class="input-group has-validation">
-                            <input type="text" class="form-control is-invalid" id="validationServerContact"
-                                aria-describedby="inputGroupPrepend3 validationServerContactFeedback"
-                                placeholder="98xxxxxx23" required>
+                        <div class="has-validation">
+                            <input type="text" class="form-control is-invalid" id="validationServerTelephone"
+                                aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
+                                placeholder="99xxxxxx12" required>
 
-                            <div id="validationServerContactFeedback" class="invalid-feedback">
+                            <div id="validationServerTelephoneFeedback" class="invalid-feedback">
                                 Enter a valid 10-digit Indian Phone Number.
                             </div>
+                            <div id="validationServerTelephoneFeedback" class="valid-feedback">
+                                Looks Good!
+                            </div>
                         </div>
+                    </div>
+                    <!-- password -->
+                    <div class="has-validation">
+                        <label for="pswdForRegister" class="form-label">Create a Password</label>
+                        <input type="password" id="pswdForRegister" class="form-control is-valid">
 
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Your password must be 8-20 characters long, contain letters and numbers, and must not
+                            contain
+                            spaces, special characters, or emoji.
+                        </div>
                     </div>
 
-                    <div class="col-12  w-auto">
+
+                    <div class="w-100  d-flex flex-column flex-md-row ">
                         <button class="btn btn-primary" type="submit">Register</button>
+
+                        <p class=""><a href="/src/html/loginPage.html">already registered?
+                                Login here </a></p>
                     </div>
 
                 </form>

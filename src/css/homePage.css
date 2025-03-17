@@ -45,11 +45,6 @@ main .nav .btn {
   border: 1px solid #000000;
 }
 
-.active-tab {
-  background: #000000;
-  color: #ffffff;
-  border: none;
-}
 .card {
   width: 15rem;
   height: fit-content;
@@ -85,7 +80,7 @@ main .nav .btn {
   border: 1px solid #000000;
 }
 
-.active-tab {
+main .nav .active-tab {
   background: #000000;
   color: #ffffff;
   border: none;

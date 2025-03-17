@@ -23,19 +23,83 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const products = await fetchData(apiUrl);
   productContainer.innerHTML = "";
+  createObject(products);
+  // //////////////////////////////////////
 
-  products.forEach((product) => {
-    const card = document.createElement("div");
-    card.classList.add(
-      "card",
-      "mx-2",
-      "my-2",
-      "d-flex",
-      "justify-content-around",
-      "align-items-center"
-    );
+  // products.forEach((ele) => console.log(ele.category));
+  // for all
+  document.getElementById("allProducts").addEventListener("click", function () {
+    productContainer.innerHTML = "";
+    document.querySelectorAll(".btn.active-tab").forEach((button) => {
+      button.classList.remove("active-tab");
+    });
 
-    card.innerHTML = `
+    this.classList.add("active-tab");
+    createObject(products);
+  });
+
+  // for men's clothing
+  document.getElementById("menClothing").addEventListener("click", function () {
+    productContainer.innerHTML = "";
+    document.querySelectorAll(".btn.active-tab").forEach((button) => {
+      button.classList.remove("active-tab");
+    });
+
+    this.classList.add("active-tab");
+    createObject(products.filter((obj) => obj.category === "men's clothing"));
+  });
+
+  // for women's clothing
+  document
+    .getElementById("womenClothing")
+    .addEventListener("click", function () {
+      productContainer.innerHTML = "";
+      document.querySelectorAll(".btn.active-tab").forEach((button) => {
+        button.classList.remove("active-tab");
+      });
+
+      this.classList.add("active-tab");
+      createObject(
+        products.filter((obj) => obj.category === "women's clothing")
+      );
+    });
+
+  // for jewellery
+  document.getElementById("jewellery").addEventListener("click", function () {
+    productContainer.innerHTML = "";
+    document.querySelectorAll(".btn.active-tab").forEach((button) => {
+      button.classList.remove("active-tab");
+    });
+
+    this.classList.add("active-tab");
+    createObject(products.filter((obj) => obj.category === "jewelery"));
+    // here spelling of 'jewllery' is misspelt in the API i.e., 'jewelery'
+  });
+
+  // for electronic items
+  document.getElementById("electronics").addEventListener("click", function () {
+    productContainer.innerHTML = "";
+    document.querySelectorAll(".btn.active-tab").forEach((button) => {
+      button.classList.remove("active-tab");
+    });
+
+    this.classList.add("active-tab");
+    createObject(products.filter((obj) => obj.category === "electronics"));
+  });
+  // //////////////////////////////////////
+  function createObject(products) {
+    products.forEach((product) => {
+      const card = document.createElement("div");
+      card.classList.add(
+        "card",
+        "mx-2",
+        "my-2",
+        "d-flex",
+        "justify-content-around",
+        "align-items-center"
+      );
+
+      card.innerHTML = `
        <img src="${
          product.image
        }" class="card-img-top object-fit-cover my-2" alt="product-img">
@@ -57,8 +121,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                       ₹ ${Math.round(
                         product.price * 10
                       )} <span class="original-price mx-2">₹ ${Math.round(
-      product.price * 15
-    )}</span>
+        product.price * 15
+      )}</span>
                   </p>
   
                   <div class="product-btn-group">
@@ -67,6 +131,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                   </div>
               </div>
       `;
-    productContainer.appendChild(card);
-  });
+      productContainer.appendChild(card);
+    });
+  }
 });
