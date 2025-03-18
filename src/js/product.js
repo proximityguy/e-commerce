@@ -100,29 +100,21 @@ document.addEventListener("DOMContentLoaded", async () => {
       );
 
       card.innerHTML = `
-       <img src="${
-         product.image
-       }" class="card-img-top object-fit-cover my-2" alt="product-img">
+      <img src="${product.image}" 
+       class="card-img-top object-fit-cover my-2" alt="product-img">
   
-              <div class="card-body w-100 mx-1 p-0 d-flex flex-column justify-content-around align-items-center " title="${
-                product.title
-              }\n${product.description}">
+              <div class="card-body w-100 mx-1 p-0 d-flex flex-column justify-content-around align-items-center " 
+              title="${product.title}\n${product.description}">
   
-                  <h5 class="card-title my-2 mx-1">${product.title.slice(
-                    0,
-                    27
-                  )}...</h5>
-                  <p class="card-text my-2 mx-1">${product.description.slice(
-                    0,
-                    27
-                  )}...</p>
+                  <h5 class="card-title my-2 mx-1">
+                  ${product.title.slice(0, 27)}...</h5>
+                  <p class="card-text my-2 mx-1">
+                  ${product.description.slice(0, 27)}...</p>
   
                   <p class="card-text text-center border-top border-bottom border-1 border-dark-subtle w-100 my-1 mx-0 px-1 py-3">
-                      ₹ ${Math.round(
-                        product.price * 10
-                      )} <span class="original-price mx-2">₹ ${Math.round(
-        product.price * 15
-      )}</span>
+                  ₹ ${Math.round(product.price * 10)} 
+                      <span class="original-price mx-2">
+                      ₹ ${Math.round(product.price * 15)}</span>
                   </p>
   
                   <div class="product-btn-group">

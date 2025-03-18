@@ -100,38 +100,66 @@ document.addEventListener("DOMContentLoaded", async () => {
       );
 
       card.innerHTML = `
-       <img src="${
-         product.image
-       }" class="card-img-top object-fit-cover my-2" alt="product-img">
+      <img src="${product.image}" 
+       class="card-img-top object-fit-cover my-2" alt="product-img">
   
-              <div class="card-body w-100 mx-1 p-0 d-flex flex-column justify-content-around align-items-center " title="${
-                product.title
-              }\n${product.description}">
+              <div class="card-body w-100 mx-1 p-0 d-flex flex-column justify-content-around align-items-center " 
+              title="${product.title}\n${product.description}">
   
-                  <h5 class="card-title my-2 mx-1">${product.title.slice(
-                    0,
-                    27
-                  )}...</h5>
-                  <p class="card-text my-2 mx-1">${product.description.slice(
-                    0,
-                    27
-                  )}...</p>
+                  <h5 class="card-title my-2 mx-1">
+                  ${product.title.slice(0, 27)}...</h5>
+                  <p class="card-text my-2 mx-1">
+                  ${product.description.slice(0, 27)}...</p>
   
                   <p class="card-text text-center border-top border-bottom border-1 border-dark-subtle w-100 my-1 mx-0 px-1 py-3">
-                      ₹ ${Math.round(
-                        product.price * 10
-                      )} <span class="original-price mx-2">₹ ${Math.round(
-        product.price * 15
-      )}</span>
+                  ₹ ${Math.round(product.price * 10)} 
+                  <span class="original-price mx-2">
+                  ₹ ${Math.round(product.price * 15)}</span>
                   </p>
   
                   <div class="product-btn-group">
                       <button class="btn bg-black text-white details">Details</button>
-                      <button class="btn bg-black text-white add-cart">Add to Cart</button>
+
+                      <button class="btn bg-black text-white add-cart"
+                      data-id ="${product.id}" 
+                      data-name = "${product.title}" 
+                      data-price = "${Math.round(product.price * 10)}"  
+                      data-image = "${product.image}" 
+                      >Add to Cart</button>
                   </div>
               </div>
       `;
       productContainer.appendChild(card);
     });
+
+    document.querySelectorAll(".add-cart").forEach((button) => {
+      button.addEventListener("click", function () {
+        this.innerHTML = `<a href = "/src/html/cart.html" class = "bg-black text-white text-decoration-none"> Go to Cart </a>`;
+        let productData = {
+          id: this.dataset.id,
+          name: this.dataset.name,
+          price: this.dataset.price,
+          image: this.dataset.image,
+        };
+
+        addToCart(productData);
+      });
+    });
+  }
+
+  function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existingProduct = cart.find((item) => item.id === product.id);
+    if (!existingProduct) {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // run this direct in the console to check that onclick the it is storing the data into localStorage or not
+    // console.log("updated cart: ", localStorage.getItem("cart"));
+
+    // window.location.href = "/src/html/cart.html";
   }
 });
