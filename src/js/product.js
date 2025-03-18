@@ -1,5 +1,6 @@
 const productContainer = document.querySelector(".product-container");
 const PlaceholderCard = document.querySelector(".placeholder-card");
+
 for (let i = 0; i < 8; i++) {
   productContainer.appendChild(PlaceholderCard.cloneNode(true));
 }
@@ -119,11 +120,52 @@ document.addEventListener("DOMContentLoaded", async () => {
   
                   <div class="product-btn-group">
                       <button class="btn bg-black text-white details">Details</button>
-                      <button class="btn bg-black text-white add-cart">Add to Cart</button>
+
+                      <button class="btn bg-black text-white add-cart"
+                      data-id ="${product.id}" 
+                      data-name = "${product.title}" 
+                      data-price = "${product.price}"  
+                      data-image = "${product.image}" 
+                      >Add to Cart</button>
                   </div>
               </div>
       `;
       productContainer.appendChild(card);
     });
+
+    document.querySelectorAll(".add-cart").forEach((button) => {
+      button.addEventListener("click", function (event) {
+        event.preventDefault(); // to prevent the immediate navigation
+
+        if (this.innerHTML === "Go to Cart") {
+          window.location.href = "/src/html/cart.html";
+          return;
+        }
+
+        let productData = {
+          id: this.dataset.id,
+          name: this.dataset.name,
+          price: this.dataset.price,
+          image: this.dataset.image,
+        };
+
+        addToCart(productData);
+        this.innerHTML = "Go to Cart";
+      });
+    });
+  }
+
+  function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existingProduct = cart.find((item) => item.id === product.id);
+    if (!existingProduct) {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // run this direct in the console to check that onclick the it is storing the data into localStorage or not
+    // console.log("updated cart: ", localStorage.getItem("cart"));
   }
 });

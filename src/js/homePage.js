@@ -1,5 +1,6 @@
 const productContainer = document.querySelector(".product-container");
 const PlaceholderCard = document.querySelector(".placeholder-card");
+
 for (let i = 0; i < 8; i++) {
   productContainer.appendChild(PlaceholderCard.cloneNode(true));
 }
@@ -120,12 +121,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                   <div class="product-btn-group">
                       <button class="btn bg-black text-white details">Details</button>
 
-                      <button class="btn bg-black text-white add-cart"
+                      <a class="btn bg-black text-white add-cart"
                       data-id ="${product.id}" 
                       data-name = "${product.title}" 
-                      data-price = "${Math.round(product.price * 10)}"  
+                      data-price = "${product.price}"  
                       data-image = "${product.image}" 
-                      >Add to Cart</button>
+                      >Add to Cart</a>
                   </div>
               </div>
       `;
@@ -133,8 +134,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     document.querySelectorAll(".add-cart").forEach((button) => {
-      button.addEventListener("click", function () {
-        this.innerHTML = `<a href = "/src/html/cart.html" class = "bg-black text-white text-decoration-none"> Go to Cart </a>`;
+      button.addEventListener("click", function (event) {
+        event.preventDefault(); // to prevent immediate navigation
+
+        if (this.innerHTML === "Go to Cart") {
+          window.location.href = "/src/html/cart.html";
+          return;
+        }
+
         let productData = {
           id: this.dataset.id,
           name: this.dataset.name,
@@ -143,6 +150,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         };
 
         addToCart(productData);
+        this.innerHTML = "Go to Cart";
       });
     });
   }
@@ -159,7 +167,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // run this direct in the console to check that onclick the it is storing the data into localStorage or not
     // console.log("updated cart: ", localStorage.getItem("cart"));
-
-    // window.location.href = "/src/html/cart.html";
   }
 });
