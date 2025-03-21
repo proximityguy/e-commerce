@@ -102,19 +102,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       card.innerHTML = `
       <img src="${product.image}" 
-       class="card-img-top object-fit-cover my-2" alt="product-img">
+       class="card-img-top my-2 object-fit-cover" alt="product-img">
   
-              <div class="card-body w-100 mx-1 p-0 d-flex flex-column justify-content-around align-items-center " 
+              <div class="d-flex flex-column card-body align-items-center justify-content-around p-0 w-100 mx-1" 
               title="${product.title}\n${product.description}">
   
-                  <h5 class="card-title my-2 mx-1">
+                  <h5 class="card-title mx-1 my-2">
                   ${product.title.slice(0, 27)}...</h5>
-                  <p class="card-text my-2 mx-1">
+                  <p class="card-text mx-1 my-2">
                   ${product.description.slice(0, 27)}...</p>
   
-                  <p class="card-text text-center border-top border-bottom border-1 border-dark-subtle w-100 my-1 mx-0 px-1 py-3">
+                  <p class="card-text border-1 border-bottom border-dark-subtle border-top text-center w-100 mx-0 my-1 px-1 py-3">
                   ₹ ${Math.round(product.price * 10)} 
-                      <span class="original-price mx-2">
+                      <span class="mx-2 original-price">
                       ₹ ${Math.round(product.price * 15)}</span>
                   </p>
   
@@ -142,11 +142,13 @@ document.addEventListener("DOMContentLoaded", async () => {
           return;
         }
 
+        let qty = 0;
         let productData = {
           id: this.dataset.id,
           name: this.dataset.name,
           price: this.dataset.price,
           image: this.dataset.image,
+          qty: 1,
         };
 
         addToCart(productData);

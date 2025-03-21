@@ -1,0 +1,206 @@
+
+// cart.forEach((item) => {
+//   let productCard = document.createElement("div");
+//   productCard.classList.add(
+//     "row",
+//     "d-flex",
+//     "flex-column",
+//     "flex-lg-row",
+//     "align-items-md-center",
+//     "text-start",
+//     "border-bottom",
+//     "border-1",
+//     "border-dark-subtle"
+//   );
+
+//   productCard.setAttribute("title", item.name);
+
+//   productCard.innerHTML = `
+//                                     <div class="col-lg-3  my-md-2 d-flex justify-content-center">
+//                                         <img src="${item.image}" alt="product"
+//                                             class="card-img-top mx-lg-2 my-2" style="width: 9rem; height: 9rem;">
+//                                     </div>
+
+//                                     <div class="col-lg-5  my-md-2 d-flex justify-content-between ">
+
+//                                         <p class="name fs-6 fw-bold">
+//                                             ${item.name.slice(0, 27)}...
+//                                         </p>
+
+//                                         <button class = "btn" 
+//                                         id = "delete-item">
+//                                         <i class="fa-solid fa-trash"></i></button>
+                                        
+//                                     </div>
+
+//                                     <div
+//                                         class="col-lg-4  my-md-2 d-flex   flex-md-row  flex-lg-column  justify-content-between">
+//                                         <p class="price my-2  fs-4">₹ ${Math.round(
+//                                           item.price * 10
+//                                         )}
+//                                             &ThickSpace;
+//                                             <span class="original-price text-decoration-line-through text-secondary ">₹
+//                                                 ${Math.round(
+//                                                   item.price * 15
+//                                                 )}</span>
+//                                         </p>
+
+//                                         <div
+//                                             class="controls my-2  d-flex justify-content-center gap-1 align-items-center">
+                                            
+//                                             <button class="btn decrease-btn  fw-bolder fs-5">-</button>
+
+//                                             <span class="item-count  fs-5">18</span>
+
+//                                             <button class="btn increase-btn  fw-bolder fs-5">+</button>
+//                                         </div>
+//                                     </div>
+// `;
+
+//   productCardBody.appendChild(productCard);
+// });
+//////////////////////// --- for order summary ---///////////
+
+// //////// for order summary
+
+// let orderSummary = createElement("div");
+// orderSummary.classList.add("col-md-4");
+// orderSummary.innerHTML = `
+//                         <div class="card">
+//                             <div class="card-header">Order Summary</div>
+//                             <div class="card-body">
+//                                 <p>Products (6): <span class="float-end">$1149</span></p>
+//                                 <p>Shipping: <span class="float-end">$30</span></p>
+//                                 <hr>
+//                                 <h5>Total Amount: <span class="float-end">$1179</span></h5>
+//                                 <button class="btn btn-dark w-100 mt-3">Go to Checkout</button>
+//                             </div>
+//                         </div>
+//                     `;
+// productCardBody.appendChild(orderSummary);
+
+// --- clear cart button
+// //// for clearing the cart
+// document.querySelector("#clear-cart").addEventListener("click", function () {
+//   localStorage.removeItem("cart");
+//   cart = [];
+//   itemContainer.innerHTML = "";
+//   itemContainer.appendChild(cartEmpty);
+// });
+
+// /////////////////////////////////
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   let cart = JSON.parse(localStorage.getItem("cart")) || [];
+//   let cartContainer = document.getElementById("cart-container");
+//   let cartTotal = document.getElementById("cart-total");
+//   let productCount = document.getElementById("product-count");
+//   let orderTotal = document.getElementById("order-total");
+//   let shippingCost = document.getElementById("shipping-cost");
+//   let finalTotal = document.getElementById("final-total");
+
+//   function displayCartItems() {
+//     cartContainer.innerHTML = "";
+//     let total = 0;
+//     let itemCount = 0;
+//     let shipping = 30;
+
+//     if (cart.length === 0) {
+//       cartContainer.innerHTML = `
+//                 <div class="text-center">
+//                     <h2>Your cart is empty</h2>
+//                     <a href="/src/html/product.html" class="btn btn-primary">Explore Products</a>
+//                 </div>`;
+//       cartTotal.innerText = "0";
+//       productCount.innerText = "0";
+//       orderTotal.innerText = "0";
+//       finalTotal.innerText = shipping;
+//       return;
+//     }
+
+//     cart.forEach((item, index) => {
+//       let productDiv = document.createElement("div");
+//       productDiv.classList.add("col-md-8", "mb-3");
+
+//       productDiv.innerHTML = `
+//                 <div class="card">
+//                     <div class="card-body row align-items-center">
+//                         <div class="col-lg-3 text-center">
+//                             <img src="${
+//                               item.image
+//                             }" class="img-fluid" style="width: 9rem; height: auto;">
+//                         </div>
+//                         <div class="col-lg-5">
+//                             <h3 class="fw-bold">${item.name}</h3>
+//                             <p class="text-muted">${
+//                               item.description || "No description available."
+//                             }</p>
+//                         </div>
+//                         <div class="col-lg-4 d-flex flex-column align-items-end">
+//                             <p class="fs-5">₹ ${Math.round(
+//                               item.price * 10
+//                             )} <span class="text-decoration-line-through text-secondary">₹ ${Math.round(
+//         item.price * 15
+//       )}</span></p>
+//                             <div class="d-flex gap-2 align-items-center">
+//                                 <button class="btn decrease-btn fw-bolder fs-3" data-index="${index}">-</button>
+//                                 <span class="item-count fs-4">${
+//                                   item.quantity || 1
+//                                 }</span>
+//                                 <button class="btn increase-btn fw-bolder fs-3" data-index="${index}">+</button>
+//                             </div>
+//                             <button class="btn btn-danger remove-item mt-2" data-index="${index}">Remove</button>
+//                         </div>
+//                     </div>
+//                 </div>`;
+
+//       cartContainer.appendChild(productDiv);
+//       total += item.price * (item.quantity || 1);
+//       itemCount += item.quantity || 1;
+//     });
+
+//     // Update Order Summary
+//     cartTotal.innerText = total;
+//     productCount.innerText = itemCount;
+//     orderTotal.innerText = total;
+//     finalTotal.innerText = total + shipping;
+//   }
+
+//   displayCartItems();
+
+//   document.addEventListener("click", function (event) {
+//     if (event.target.classList.contains("remove-item")) {
+//       let index = event.target.dataset.index;
+//       cart.splice(index, 1);
+//       localStorage.setItem("cart", JSON.stringify(cart));
+//       displayCartItems();
+//     }
+
+//     if (event.target.classList.contains("increase-btn")) {
+//       let index = event.target.dataset.index;
+//       cart[index].quantity = (cart[index].quantity || 1) + 1;
+//       localStorage.setItem("cart", JSON.stringify(cart));
+//       displayCartItems();
+//     }
+
+//     if (event.target.classList.contains("decrease-btn")) {
+//       let index = event.target.dataset.index;
+//       if (cart[index].quantity > 1) {
+//         cart[index].quantity--;
+//       } else {
+//         cart.splice(index, 1); // Remove item if quantity reaches zero
+//       }
+//       localStorage.setItem("cart", JSON.stringify(cart));
+//       displayCartItems();
+//     }
+//   });
+
+//   document.getElementById("clear-cart").addEventListener("click", function () {
+//     localStorage.removeItem("cart");
+//     cart = [];
+//     displayCartItems();
+//   });
+// });
+
+
