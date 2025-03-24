@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                       <button class="btn bg-black text-white add-cart"
                       data-id ="${product.id}" 
                       data-name = "${product.title}" 
+                      data-description = "${product.description}"
                       data-price = "${product.price}"  
                       data-image = "${product.image}" 
                       >Add to Cart</button>
@@ -146,6 +147,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         let productData = {
           id: this.dataset.id,
           name: this.dataset.name,
+          description: this.dataset.description,
           price: this.dataset.price,
           image: this.dataset.image,
           qty: 1,
